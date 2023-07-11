@@ -9,9 +9,12 @@ import ar.com.codoacodo.oop.Libro;
 public class MySQLDAOImpl implements DAO {
 
     // Atributos
-    private String tableName = "articulo";
+    private String tableName;
 
-    // Constructor 
+    // Constructor
+    public MySQLDAOImpl() {
+        this.tableName = "articulos";
+    }
 
     // Métodos    
     // Va a cumplir ese contrato entre DAO y esta clase
@@ -21,24 +24,24 @@ public class MySQLDAOImpl implements DAO {
 
     @Override
     public void delete(Long id) {
-        String sql = "delete from articulos where id = " + id;
+        String sql = "delete from " + this.tableName + " where id = " + id;
 
     }
 
     @Override
     public ArrayList<Articulo> findAll() {
-        String sql = "select * from articulos";
+        String sql = "select * from " + this.tableName;
         return null;
     }
 
     @Override
     public void update(Articulo articulo) {
-        String sql = "update articulos set titulo= , precio= , autor= ";
+        String sql = "update " + this.tableName + " set titulo= , precio= , autor= ";
     }
 
     @Override
     public void create(Articulo articulo) {
-        String sql = "insert into articulos";
+        String sql = "insert into " + this.tableName;
         sql += "(titulo, autor, precio, fecha, novedad)";
         sql += "value(..., ..., ..., ..., ...)";
 
