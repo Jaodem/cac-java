@@ -25,6 +25,7 @@ public class MySQLDAOImpl implements DAO {
     @Override
     public void delete(Long id) {
         String sql = "delete from " + this.tableName + " where id = " + id;
+        // Acá va la magia que falta
 
     }
 
