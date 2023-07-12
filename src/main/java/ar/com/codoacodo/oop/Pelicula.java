@@ -1,11 +1,21 @@
 package ar.com.codoacodo.oop;
 
+import java.time.LocalDateTime;
+
 public class Pelicula extends Articulo {
     
     private String productora;
 
-    public Pelicula(String titulo, String imagen, double precio, String autor, boolean novedad, String productora) {
-        super(titulo, imagen, precio, autor, novedad);
+    public Pelicula(
+        String titulo,
+        String imagen,
+        double precio,
+        String autor,
+        boolean novedad,
+        String productora,
+        String codigo,
+        LocalDateTime fechaCreacion) {
+        super(titulo, imagen, precio, autor, novedad, codigo, fechaCreacion);
         this.productora = productora;
     }
 

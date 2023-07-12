@@ -1,15 +1,28 @@
 package ar.com.codoacodo;
 
+import java.io.IOException;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
 import ar.com.codoacodo.dao.impl.DAO;
 import ar.com.codoacodo.dao.impl.MySQLDAOImpl;
 
-public class DeleteController {
-    
-    public static void main(String[] args) {
-        long id = 10;
+public class DeleteController extends HttpServlet {
+
+    // Ésto lo maneja el servidor (Tomcat)
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        String id = req.getParameter("id");
 
         DAO dao = new MySQLDAOImpl();
 
-        dao.delete(id);
+        try {
+            dao.delete(Long.parseLong(id));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
