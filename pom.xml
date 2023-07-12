@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
   <modelVersion>4.0.0</modelVersion>
   <groupId>ar.com.codoacodo</groupId>
-  <artifactId>wep-app</artifactId>
+  <artifactId>web-app</artifactId>
   <version>1.0.0-SNAPSHOT</version>
-  <name>wep-app</name>
+  <name>web-app</name>
   <packaging>war</packaging>
 
   <!-- FIXME change it to the project's website -->
@@ -19,7 +18,7 @@
     <maven.compiler.target>11</maven.compiler.target>
   </properties>
 
-  <!-- Librerías propias/terceros -->
+  <!-- LIBRERIAS propias/terceros-->
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -27,40 +26,36 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-
-    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>8.0.31</version>
-    </dependency>
-
-    <!-- habilito la posibilidad de usar Servlet y JSP -->
-    <!-- https://mvnrepository.com/artifact/javax.servlet.jsp-api -->
-    <dependency>
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.31</version>
+		</dependency>
+		<!--habillito la posibilidad de usar Servlet y JSP-->
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
       <groupId>jakarta.servlet</groupId>
       <artifactId>jakarta.servlet-api</artifactId>
       <version>5.0.0</version>
-      <scope>provided</scope>
     </dependency>
-
-    <!-- https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api -->
-    <dependency>
-      <groupId>javax.servlet.jsp</groupId>
-      <artifactId>javax.servlet.jsp-api</artifactId>
-      <version>2.3.3</version>
-      <scope>provided</scope>
-    </dependency>
+		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api -->
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.3</version>
+			<scope>provided</scope>
+		</dependency>
   </dependencies>
 
   <build>
-    <plugins>
-      <plugin>
+  <plugins>
+    <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
         <version>3.3.1</version>
-      </plugin>
-    </plugins>
-    <finalName>web-app</finalName>
+    </plugin>
+  </plugins>
+   <finalName>web-app</finalName>
   </build>
 </project>
